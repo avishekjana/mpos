@@ -1,0 +1,42 @@
+%ul#nav-mobile.sidenav.sidenav-fixed
+  %div.sidenav-links
+    %li.brand-logo2
+      %a.logo-link2{:href => dashboard_index_path}
+        .logo-flexbox2
+          =image_tag('logo_single.svg', width: 45)
+    %li.top-tenant-info
+      %span.font-16= "Deepanjali Radio"
+      %span.font-12.text-muted-1= "Panskura"
+    %li
+      %a.subheader General  
+    %li{class: active_sidebar_link(['pos'], params[:controller])}
+      %a.waves-effect{:href => '#'}
+        %i.material-icons qr_code
+        POS      
+    %li{class: active_sidebar_link(['dashboard'], params[:controller])}
+      %a.waves-effect{:href => dashboard_index_path}
+        %i.material-icons speed
+        Dashboard
+    %li
+      %a.subheader Inventory
+    %li{class: active_sidebar_link(['products'], params[:controller])}
+      %a.waves-effect{:href => '#'}
+        %i.material-icons museum
+        Stores
+    %li{class: active_sidebar_link(['products'], params[:controller])}
+      %a.waves-effect{:href => '#'}
+        %i.material-icons inventory_2
+        Products      
+    %li
+      %a.subheader Reports  
+    %li{class: active_sidebar_link(['products'], params[:controller])}
+      %a.waves-effect{:href => '#'}
+        %i.material-icons leaderboard
+        Sales Report             
+  %li.bottom-user-action
+    %i.material-icons.highlight admin_panel_settings
+    %span
+      Hi, 
+      = current_user.email
+    = link_to destroy_user_session_path,  method:'delete' do
+      Sign Out

@@ -2,10 +2,20 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Mpos
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{name: "theme-color", content: "#FFF"}
+    %title Minimal POS
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    -# %link{:href => "/assets/fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}
   %body
+    %header
+      %nav.top-nav
+        .container
+          .nav-wrapper
+            %h5.header Hello
+      = render 'layouts/sidebar'
+ 
     = yield

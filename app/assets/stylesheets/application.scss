@@ -1,0 +1,36 @@
+// @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;600&display=swap');
+@import 'materialize/components/color-variables';
+$primary-color: color('green', 'base') !default;
+$secondary-color: color('yellow', 'base') !default;
+
+@font-face {
+  font-family: 'Material Icons';
+  src: local('Material Icons'),
+    url('fonts/MaterialIcons-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  src: local('Be Vietnam'), url('fonts/BeVietnam-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  src: local('Be Vietnam'),
+    url('fonts/BeVietnam-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  src: local('Be Vietnam'), url('fonts/BeVietnam-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  src: local('Be Vietnam'),
+    url('fonts/BeVietnam-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+@import 'materialize';
+@import 'theme';
