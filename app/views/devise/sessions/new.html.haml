@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.row
+  .col.l4.s0.hide-on-small-only
+    .devise-left-paper
+      %span
+        = image_tag 'logo_single.svg', alt: 'logo', height: '', width: '45px', class: ''
+        %br
+        %h4.font-300 Hi, Welcome Back
+      = image_tag 'undraw_Login.svg', alt: 'banner', height: '', width: '100%', class: 'mt-20'
+  .col.l8.s12
+    .row
+      .col.l6.offset-l3.s12
+        .devise-right-paper
+          %h5.font-500 Sign in to Minimal POS
+          %span.text-muted-1 Enter your details below.
+          .mt80
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .input-field.input-outlined
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Enter your email address'
+                = f.label :email
+              .input-field.input-outlined
+                = f.password_field :password, autocomplete: "current-password"
+                = f.label :password
+              .flex-row
+                - if devise_mapping.rememberable?
+                  = f.label :remember_me do
+                    = f.check_box :remember_me, class: 'filled-in'
+                    %span Remember me
+                - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+                  = link_to "Forgot your password?", new_password_path(resource_name)
+              .actions.mt40
+                = f.submit "Log in", class: 'btn primary-btn full-width'
+
